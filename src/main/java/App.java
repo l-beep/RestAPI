@@ -22,7 +22,7 @@ public class App {
         if (processBuilder.environment().get("PORT") != null) {
             return Integer.parseInt(processBuilder.environment().get("PORT"));
         }
-        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+        return 4567;
     }
 
     public static void main(String[] args) {
@@ -36,27 +36,27 @@ public class App {
         staticFileLocation("/public");
 
         String connectionString = "jdbc:postgresql://localhost:5432/organisational_news_portal";
-        Sql2o sql2o = new Sql2o(connectionString, "maureenbett", "kenyan082bett");
+        Sql2o sql2o = new Sql2o(connectionString, "jediel", "lovineoduor1");
         sql2oDepartmentsDao=new Sql2oDepartmentsDao(sql2o);
         sql2oNewsDao=new Sql2oNewsDao(sql2o);
         sql2oUsersDao=new Sql2oUsersDao(sql2o);
         conn=sql2o.open();
 
         //adding a new user
-        post("/users/new","application/json",(request, response) -> {//tested..............
+        post("/users/new","application/json",(request, response) -> {
             Users user=gson.fromJson(request.body(),Users.class);
             sql2oUsersDao.add(user);
             response.status(201);
             return gson.toJson(user);
         });
-        post("/departments/new","application/json",(request, response) -> {//tesdted................
+        post("/departments/new","application/json",(request, response) -> {
             Departments departments =gson.fromJson(request.body(),Departments.class);
             sql2oDepartmentsDao.add(departments);
             response.status(201);
             return gson.toJson(departments);
         });
         //adding users to a specific department
-        post("/add/user/:user_id/department/:department_id","application/json",(request, response) -> {//tested......
+        post("/add/user/:user_id/department/:department_id","application/json",(request, response) -> {
 
             int user_id=Integer.parseInt(request.params("user_id"));
             int department_id=Integer.parseInt(request.params("department_id"));
@@ -77,16 +77,8 @@ public class App {
             response.status(201);
             return gson.toJson(departmentUsers);
         });
-        //adding general news in the department
 
-//        post("/news/new/general","application/json",(request, response) -> {//tested................
-//
-//            News news =gson.fromJson(request.body(),News.class);
-//            sql2oNewsDao.addNews(news);
-//            response.status(201);
-//            return gson.toJson(news);
-//        });
-        post("/news/new/department","application/json",(request, response) -> { //tested.......
+        post("/news/new/department","application/json",(request, response) -> {
             News department_news =gson.fromJson(request.body(),News.class);
             Departments departments=sql2oDepartmentsDao.findById(department_news.getDepartment_id());
             Users users=sql2oUsersDao.findById(department_news.getUser_id());
