@@ -93,10 +93,10 @@ public class Sql2oUsersDaoTest {
 
     //helper
     private Departments setUpNewDepartment() {
-        return new Departments("Kopaloans", "microfinance");
+        return new Departments("Jane Doe", "microfinance");
     }
 
     private Users setUpNewUser() {
-        return new Users("Maureen", "Manager", "Managing Director");
+        return new Users("JOhn Doe", "Manager", "Managing Director");
     }
 }
