@@ -21,7 +21,7 @@ CREATE TABLE staff (
 id SERIAL PRIMARY KEY,
 name VARCHAR,
 position VARCHAR,
-staff_role VARCHAR
+S VARCHAR
 );
 
 CREATE TABLE users_departments (

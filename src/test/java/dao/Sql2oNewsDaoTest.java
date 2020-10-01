@@ -24,7 +24,7 @@ public class Sql2oNewsDaoTest {
     public void setUp() throws Exception {
 
         String connectionString = "jdbc:postgresql://localhost:5432/organisational_news_portal_test";
-        Sql2o sql2o = new Sql2o(connectionString, "maureenbett", "kenyan082bett");
+        Sql2o sql2o = new Sql2o(connectionString, "jediel", "lovineoduor1");
         sql2oDepartmentsDao=new Sql2oDepartmentsDao(sql2o);
         sql2oUsersDao=new Sql2oUsersDao(sql2o);
         sql2oNewsDao=new Sql2oNewsDao(sql2o);

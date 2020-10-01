@@ -1,4 +1,3 @@
-
 import com.google.gson.Gson;
 import dao.Sql2oDepartmentsDao;
 import dao.Sql2oNewsDao;
@@ -27,7 +26,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        port(getHerokuAssignedPort());
+//        port(getHerokuAssignedPort());
         Sql2oNewsDao sql2oNewsDao;
         Sql2oUsersDao sql2oUsersDao;
         Sql2oDepartmentsDao sql2oDepartmentsDao;
@@ -35,8 +34,8 @@ public class App {
         Gson gson = new Gson();
         staticFileLocation("/public");
 
-        String connectionString = "jdbc:postgresql://localhost:5432/organisational_news_portal";
-        Sql2o sql2o = new Sql2o(connectionString, "jediel", "lovineoduor1");
+        String connectionString = "jdbc:postgresql://ec2-3-210-255-177.compute-1.amazonaws.com:5432/d6mvpseauu25u2";
+        Sql2o sql2o = new Sql2o(connectionString, "dcxszjhfmyuria", "fae88b3c441d3681362532475a3c98644034c1cc16a2f4fcbc582d6136de9dfa");
         sql2oDepartmentsDao=new Sql2oDepartmentsDao(sql2o);
         sql2oNewsDao=new Sql2oNewsDao(sql2o);
         sql2oUsersDao=new Sql2oUsersDao(sql2o);

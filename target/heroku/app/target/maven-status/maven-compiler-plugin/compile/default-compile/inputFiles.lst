@@ -1,0 +1,12 @@
+/home/jediel/RestAPI/src/main/java/dao/Sql2oDepartmentsDao.java
+/home/jediel/RestAPI/src/main/java/models/News.java
+/home/jediel/RestAPI/src/main/java/dao/NewsDao.java
+/home/jediel/RestAPI/src/main/java/dao/Sql2oNewsDao.java
+/home/jediel/RestAPI/src/main/java/models/Users.java
+/home/jediel/RestAPI/src/main/java/App.java
+/home/jediel/RestAPI/src/main/java/dao/Sql2oUsersDao.java
+/home/jediel/RestAPI/src/main/java/exceptions/ApiException.java
+/home/jediel/RestAPI/src/main/java/dao/DepartmentsDao.java
+/home/jediel/RestAPI/src/main/java/dao/UsersDao.java
+/home/jediel/RestAPI/src/main/java/models/Departments.java
+/home/jediel/RestAPI/src/main/java/models/Department_News.java
